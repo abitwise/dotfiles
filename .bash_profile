@@ -56,9 +56,9 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 # source /usr/local/bin/virtualenvwrapper.sh
 
-# Mac OS change max open files limit 
-echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
-echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
-sudo sysctl -w kern.maxfiles=65536
-sudo sysctl -w kern.maxfilesperproc=65536
+# Mac OS change max open files limit (first 4 lines are one-time)
+# echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+# echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -w kern.maxfiles=65536
+# sudo sysctl -w kern.maxfilesperproc=65536
 ulimit -n 65536 65536
