@@ -62,3 +62,7 @@ export PROJECT_HOME=$HOME/dev
 # sudo sysctl -w kern.maxfiles=65536
 # sudo sysctl -w kern.maxfilesperproc=65536
 ulimit -n 65536 65536
+
+# Alias to enable/disable Investorise socks proxy
+alias socks_on='networksetup -setsocksfirewallproxystate Wi-Fi on; ssh -D 8666 -C -N -f -M -S ~/.socks.socket olger@office.investorise.com'
+alias socks_off='networksetup -setsocksfirewallproxystate Wi-Fi off; ssh -S ~/.socks.socket -O exit olger@office.investorise.com'
