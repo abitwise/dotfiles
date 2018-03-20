@@ -54,17 +54,17 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # Python environment for Mac
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev
-# source /usr/local/bin/virtualenvwrapper.sh
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3;
+export WORKON_HOME=$HOME/.virtualenvs;
+export PROJECT_HOME=$HOME/dev;
+source /usr/local/bin/virtualenvwrapper.sh;
 
 # Mac OS change max open files limit (first 4 lines are one-time)
 # echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
 # echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
 # sudo sysctl -w kern.maxfiles=65536
 # sudo sysctl -w kern.maxfilesperproc=65536
-ulimit -n 65536 65536
+ulimit -n 65536 65536;
 
 # Alias to enable/disable Investorise socks proxy
 alias socks_on='networksetup -setsocksfirewallproxystate Wi-Fi on; ssh -D 8666 -C -N -f -M -S ~/.socks.socket olger@office.investorise.com'
