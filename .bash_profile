@@ -69,3 +69,5 @@ ulimit -n 65536 65536;
 # Alias to enable/disable Investorise socks proxy
 alias socks_on='networksetup -setsocksfirewallproxystate Wi-Fi on; ssh -D 8666 -C -N -f -M -S ~/.socks.socket olger@office.investorise.com'
 alias socks_off='networksetup -setsocksfirewallproxystate Wi-Fi off; ssh -S ~/.socks.socket -O exit olger@office.investorise.com'
+alias socks_home_on='networksetup -setsocksfirewallproxystate "AX88179 USB 3.0 to Gigabit Ethernet" on; ssh -D 8666 -C -N -f -M -S ~/.socks.socket olger@office.investorise.com'
+alias socks_home_off='networksetup -setsocksfirewallproxystate "AX88179 USB 3.0 to Gigabit Ethernet" off; ssh -S ~/.socks.socket -O exit olger@office.investorise.com'
