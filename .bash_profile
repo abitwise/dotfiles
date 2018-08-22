@@ -54,10 +54,10 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # Python environment for Mac
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3;
-export WORKON_HOME=$HOME/.virtualenvs;
-export PROJECT_HOME=$HOME/dev;
-source /usr/local/bin/virtualenvwrapper.sh;
+#VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3;
+#export WORKON_HOME=$HOME/.virtualenvs;
+#export PROJECT_HOME=$HOME/dev;
+#source /usr/local/bin/virtualenvwrapper.sh;
 
 # Mac OS change max open files limit (first 4 lines are one-time)
 # echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
