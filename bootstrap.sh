@@ -12,6 +12,8 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		--exclude ".idea/" \
+                --exclude "fix_errors.sh" \
+                --exclude "fix_errors.txt" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }

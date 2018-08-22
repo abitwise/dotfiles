@@ -1,0 +1,11 @@
+Hello, some info about the manual hacking needed (using sudo or what not)
+
+-------------------------------------------------------------------------
+1. Changing the ulimit (open files limit)
+-------------------------------------------------------------------------
+When you encounter following error:
+.bash_profile: line 67: ulimit: open files: cannot modify limit: Invalid argument
+
+Run these commands:
+./fix_ulimit_error.sh
+-------------------------------------------------------------------------
