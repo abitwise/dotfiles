@@ -22,7 +22,7 @@ brew install gnu-sed --with-default-names
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
 brew install bash
-brew tap homebrew/versions
+brew tap homebrew-core
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
@@ -42,9 +42,9 @@ brew install wget --with-iri
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
+brew install grep
+brew install openssh
+brew install screen
 #brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
