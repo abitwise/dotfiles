@@ -103,3 +103,7 @@ brew install zopfli
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# java related tools
+brew install maven
+
