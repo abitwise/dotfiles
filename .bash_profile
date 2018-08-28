@@ -68,3 +68,6 @@ ulimit -n 65536 65536;
 
 # Go lang
 export GOPATH=$HOME/dev/go
+
+# Bigbank specific stuff
+export NODE_EXTRA_CA_CERTS=/Users/olger.oeselg/Projects/certs/Bigbank_AS_Root_CA_2016.crt
