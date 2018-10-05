@@ -73,3 +73,9 @@ export GOPATH=$HOME/dev/go
 export NODE_EXTRA_CA_CERTS="/Users/olger.oeselg/Projects/certs/Bigbank_AS_Root_CA_2016.crt";
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+# Brew specific stuff
+# Add gettext to path
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/gettext/lib"
+export CPPFLAGS="-I/usr/local/opt/gettext/include"
