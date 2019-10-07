@@ -79,3 +79,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/gettext/lib"
 export CPPFLAGS="-I/usr/local/opt/gettext/include"
+
+# Set language to US English
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
