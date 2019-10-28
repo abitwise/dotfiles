@@ -183,3 +183,8 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[user]
+
+    name = "Olger Oeselg"
+    email = "olger.oeselg@bigbank.ee"
