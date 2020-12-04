@@ -85,4 +85,4 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
 # Android Studio stuff
-export PATH="/Users/olger.oeselg/Projects/apps_dev/android/cmdline-tools/bin:$PATH"
+export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:${PATH}"
