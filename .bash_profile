@@ -84,3 +84,5 @@ export CPPFLAGS="-I/usr/local/opt/gettext/include"
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+# Android Studio stuff
+export PATH="/Users/olger.oeselg/Projects/apps_dev/android/cmdline-tools/bin:$PATH"
