@@ -72,8 +72,8 @@ ulimit -n 65536 65536;
 export GOPATH=$HOME/dev/go
 
 # NVM things
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
 
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
