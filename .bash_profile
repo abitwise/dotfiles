@@ -75,6 +75,9 @@ export GOPATH=$HOME/dev/go
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# Homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # Brew specific stuff
 # Add gettext to path
 export PATH="/usr/local/opt/gettext/bin:$PATH"
