@@ -76,9 +76,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # Brew specific stuff
 # Add gettext to path
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/gettext/lib"
-export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/libiconv/lib"
+export CPPFLAGS="-I/usr/local/opt/libiconv/include"
 
 # Set language to US English
 export LC_ALL=en_US.UTF-8
