@@ -88,3 +88,7 @@ export LC_CTYPE=en_US.UTF-8
 
 # Android Studio stuff
 export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:${PATH}"
+
+# Bun.js (bun.sh)
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
