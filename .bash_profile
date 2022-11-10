@@ -68,15 +68,21 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # sudo sysctl -w kern.maxfilesperproc=65536
 ulimit -n 65536 65536;
 
+# Increase Node.js threadpool size
+export UV_THREADPOOL_SIZE=1024
+
 # Go lang
 export GOPATH=$HOME/dev/go
+
+# Brew specific stuff 
+export PATH="/opt/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Bigbank specific stuff
 export NODE_EXTRA_CA_CERTS="/Users/olger.oeselg/Projects/certs/Bigbank_AS_Root_CA_2016.crt";
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+source $(brew --prefix nvm)/nvm.sh
 
-# Brew specific stuff
 # Add gettext to path
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/libiconv/lib"
