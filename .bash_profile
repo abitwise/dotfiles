@@ -98,3 +98,7 @@ export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platf
 # Bun.js (bun.sh)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
