@@ -107,5 +107,6 @@ brew install zopfli
 brew cleanup
 
 # java related tools
+brew install openjdk
 brew install maven
 
