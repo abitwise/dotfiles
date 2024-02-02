@@ -74,7 +74,7 @@ export UV_THREADPOOL_SIZE=1024
 # Go lang
 export GOPATH=$HOME/dev/go
 
-# Brew specific stuff 
+# Brew specific stuff
 export PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -100,7 +100,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> /Users/olger.oeselg/.bash_profile
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" >> /Users/olger.oeselg/.bash_profile
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 export JAVA_HOME=$(/Library/Java/JavaVirtualMachines/openjdk.jdk)
 
