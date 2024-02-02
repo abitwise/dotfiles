@@ -100,7 +100,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" >> /Users/olger.oeselg/.bash_profile
+export JAVA_HOME="/opt/homebrew/opt/openjdk/"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export JAVA_HOME=$(/Library/Java/JavaVirtualMachines/openjdk.jdk)
-
+export PATH=$PATH:$JAVA_HOME/bin
