@@ -100,6 +100,17 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Java
-export JAVA_HOME="/opt/homebrew/opt/openjdk/"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_17_HOME="/opt/homebrew/opt/openjdk@17/"
+export JAVA_19_HOME="/opt/homebrew/opt/openjdk@19/"
+export JAVA_20_HOME="/opt/homebrew/opt/openjdk@20/"
+export JAVA_21_HOME="/opt/homebrew/opt/openjdk@21/"
+
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
+alias java19='export JAVA_HOME=$JAVA_19_HOME'
+alias java20='export JAVA_HOME=$JAVA_20_HOME'
+alias java21='export JAVA_HOME=$JAVA_21_HOME'
+
+#default is currently: Java 17
+export JAVA_HOME=$JAVA_17_HOME
+export CPPFLAGS='echo "-I"$JAVA_17_HOME"include"'
 export PATH=$PATH:$JAVA_HOME/bin
