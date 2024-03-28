@@ -100,15 +100,29 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Java
+export JAVA_11_HOME="/opt/homebrew/opt/openjdk@11/"
 export JAVA_17_HOME="/opt/homebrew/opt/openjdk@17/"
 export JAVA_19_HOME="/opt/homebrew/opt/openjdk@19/"
 export JAVA_20_HOME="/opt/homebrew/opt/openjdk@20/"
 export JAVA_21_HOME="/opt/homebrew/opt/openjdk@21/"
 
+export JAVA_11_CPPFLAGS='echo "-I"$JAVA_11_HOME"include"'
+export JAVA_17_CPPFLAGS='echo "-I"$JAVA_17_HOME"include"'
+export JAVA_19_CPPFLAGS='echo "-I"$JAVA_19_HOME"include"'
+export JAVA_20_CPPFLAGS='echo "-I"$JAVA_20_HOME"include"'
+export JAVA_21_CPPFLAGS='echo "-I"$JAVA_21_HOME"include"'
+
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 alias java19='export JAVA_HOME=$JAVA_19_HOME'
 alias java20='export JAVA_HOME=$JAVA_20_HOME'
 alias java21='export JAVA_HOME=$JAVA_21_HOME'
+
+alias java11flags='export CPPFLAGS=$JAVA_11_CPPFLAGS'
+alias java17flags='export CPPFLAGS=$JAVA_17_CPPFLAGS'
+alias java19flags='export CPPFLAGS=$JAVA_19_CPPFLAGS'
+alias java20flags='export CPPFLAGS=$JAVA_20_CPPFLAGS'
+alias java21flags='export CPPFLAGS=$JAVA_21_CPPFLAGS'
 
 #default is currently: Java 17
 export JAVA_HOME=$JAVA_17_HOME
