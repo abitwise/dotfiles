@@ -1,6 +1,9 @@
 # Add /usr/local/sbin to path
 export PATH=/usr/local/sbin:$PATH;
 
+# Add ~/.local/bin to path
+export PATH="$HOME/.local/bin:$PATH";
+
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
