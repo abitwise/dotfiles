@@ -1,9 +1,34 @@
 #!/usr/bin/env bash
 
-# Shell prompt based on the Solarized Dark theme.
+# Shell prompt based on the Nord theme with truecolor support.
 # Screenshot: http://i.imgur.com/EkEtphC.png
-# Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
+# Heavily inspired by @necolas's prompt: https://github.com/necolas/dotfiles
 # iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
+
+# Detect truecolor support
+supports_truecolor() {
+	# Reject dumb terminals and NO_COLOR
+	if [[ "${TERM}" == "dumb" ]] || [[ -n "${NO_COLOR}" ]]; then
+		return 1;
+	fi;
+	
+	# Check COLORTERM for explicit truecolor/24bit
+	if [[ "${COLORTERM}" == *"truecolor"* ]] || [[ "${COLORTERM}" == *"24bit"* ]]; then
+		return 0;
+	fi;
+	
+	# Check for known truecolor-capable terminals
+	if [[ "${TERM_PROGRAM}" == "iTerm.app" ]] || [[ "${TERM_PROGRAM}" == "Apple_Terminal" ]]; then
+		return 0;
+	fi;
+	
+	return 1;
+};
+
+# Conditionally export COLORTERM if truecolor is supported
+if supports_truecolor && [[ -z "${COLORTERM}" ]]; then
+	export COLORTERM='truecolor';
+fi;
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
@@ -57,34 +82,52 @@ prompt_git() {
 	echo -e "${1}${branchName}${2}${s}";
 }
 
-if tput setaf 1 &> /dev/null; then
-	tput sgr0; # reset colors
-	bold=$(tput bold);
-	reset=$(tput sgr0);
-	# Solarized colors, taken from http://git.io/solarized-colors.
-	black=$(tput setaf 0);
-	blue=$(tput setaf 33);
-	cyan=$(tput setaf 37);
-	green=$(tput setaf 64);
-	orange=$(tput setaf 166);
-	purple=$(tput setaf 125);
-	red=$(tput setaf 124);
-	violet=$(tput setaf 61);
-	white=$(tput setaf 15);
-	yellow=$(tput setaf 136);
-else
-	bold='';
+# Truecolor helpers: convert hex to RGB and generate ANSI escape sequences
+hex_to_rgb() {
+	local hex="${1#\#}";
+	local r=$((16#${hex:0:2}));
+	local g=$((16#${hex:2:2}));
+	local b=$((16#${hex:4:2}));
+	printf "%d;%d;%d" "$r" "$g" "$b";
+}
+
+fg_hex() {
+	printf "\e[38;2;%sm" "$(hex_to_rgb "$1")";
+}
+
+# Define color palette based on truecolor support
+if supports_truecolor; then
+	# Nord palette (truecolor 24-bit)
+	bold="\e[1m";
 	reset="\e[0m";
-	black="\e[1;30m";
-	blue="\e[1;34m";
-	cyan="\e[1;36m";
-	green="\e[1;32m";
-	orange="\e[1;33m";
-	purple="\e[1;35m";
-	red="\e[1;31m";
-	violet="\e[1;35m";
-	white="\e[1;37m";
-	yellow="\e[1;33m";
+	
+	# Nord background/foreground shades
+	black=$(fg_hex "#3B4252");       # Nord1 (darker bg)
+	white=$(fg_hex "#ECEFF4");       # Nord6 (bright fg)
+	
+	# Nord accent colors
+	red=$(fg_hex "#BF616A");         # Nord11
+	orange=$(fg_hex "#D08770");      # Nord12
+	yellow=$(fg_hex "#EBCB8B");      # Nord13
+	green=$(fg_hex "#A3BE8C");       # Nord14
+	cyan=$(fg_hex "#88C0D0");        # Nord8
+	blue=$(fg_hex "#81A1C1");        # Nord9
+	purple=$(fg_hex "#B48EAD");      # Nord15
+	violet=$(fg_hex "#B48EAD");      # Nord15 (same as purple)
+else
+	# ANSI 16-color fallback
+	bold="\e[1m";
+	reset="\e[0m";
+	black="\e[0;30m";
+	white="\e[0;37m";
+	red="\e[0;31m";
+	orange="\e[0;33m";     # yellow is closest to orange
+	yellow="\e[0;33m";
+	green="\e[0;32m";
+	cyan="\e[0;36m";
+	blue="\e[0;34m";
+	purple="\e[0;35m";
+	violet="\e[0;35m";
 fi;
 
 # Highlight the user name when logged in as root.
