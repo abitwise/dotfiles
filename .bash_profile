@@ -71,6 +71,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 # sudo sysctl -w kern.maxfilesperproc=65536
 ulimit -n 65536 65536;
 
+# Increase Node.js threadpool size
+export UV_THREADPOOL_SIZE=1024
+
 # Go lang
 export GOPATH=$HOME/dev/go
 
@@ -81,11 +84,10 @@ export GOPATH=$HOME/dev/go
 # Homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
 
-# Brew specific stuff
 # Add gettext to path
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/gettext/lib"
-export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/libiconv/lib"
+export CPPFLAGS="-I/usr/local/opt/libiconv/include"
 
 # Set language to US English
 export LC_ALL=en_US.UTF-8
@@ -93,3 +95,29 @@ export LC_CTYPE=en_US.UTF-8
 
 # Android Studio stuff
 export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:${PATH}"
+
+# Bun.js (bun.sh)
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Java
+export JAVA_23_HOME="/opt/homebrew/opt/openjdk@23/"
+export JAVA_25_HOME="/opt/homebrew/opt/openjdk@25/"
+
+export JAVA_23_CPPFLAGS='echo "-I"$JAVA_23_HOME"include"'
+export JAVA_25_CPPFLAGS='echo "-I"$JAVA_25_HOME"include"'
+
+alias java23='export JAVA_HOME=$JAVA_23_HOME'
+alias java25='export JAVA_HOME=$JAVA_25_HOME'
+
+alias java23flags='export CPPFLAGS=$JAVA_23_CPPFLAGS'
+alias java25flags='export CPPFLAGS=$JAVA_25_CPPFLAGS'
+
+# Jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# Set default java to Java 25
+export JAVA_HOME=$JAVA_25_HOME
+export CPPFLAGS='echo "-I"$JAVA_25_HOME"include"'
+export PATH=$PATH:$JAVA_HOME/bin

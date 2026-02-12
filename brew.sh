@@ -107,5 +107,15 @@ brew install zopfli
 brew cleanup
 
 # java related tools
+brew install openjdk@23
+brew install openjdk@25
+
+for obsolete_jdk in openjdk@11 openjdk@13 openjdk@17 openjdk@19 openjdk@20 openjdk@21; do
+  if brew list --formula "$obsolete_jdk" >/dev/null 2>&1; then
+    brew uninstall --ignore-dependencies "$obsolete_jdk"
+  fi
+done
+
 brew install maven
+brew install gradle
 
