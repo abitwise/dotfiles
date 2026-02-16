@@ -79,7 +79,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Bigbank specific stuff
-export NODE_EXTRA_CA_CERTS="/Users/olger.oeselg/Projects/certs/Bigbank_AS_Root_CA_2016.crt";
+export NODE_EXTRA_CA_CERTS="/Users/olger.oeselg/Projects/certs/Bigbank_AS_Root_CA_2025.crt";
 export NVM_DIR="$HOME/.nvm"
 source $(brew --prefix nvm)/nvm.sh
 
