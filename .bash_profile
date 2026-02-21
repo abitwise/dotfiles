@@ -121,3 +121,7 @@ eval "$(jenv init -)"
 export JAVA_HOME=$JAVA_25_HOME
 export CPPFLAGS='echo "-I"$JAVA_25_HOME"include"'
 export PATH=$PATH:$JAVA_HOME/bin
+
+# Added by flyctl installer
+export FLYCTL_INSTALL="/Users/olgeroeselg/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
