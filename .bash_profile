@@ -121,3 +121,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 # Added by flyctl installer
 export FLYCTL_INSTALL="/Users/olgeroeselg/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Turso
+export PATH="$PATH:/Users/olgeroeselg/.turso"
