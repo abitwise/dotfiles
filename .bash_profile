@@ -100,15 +100,19 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Java
+export JAVA_21_HOME="/opt/homebrew/opt/openjdk@21/"
 export JAVA_23_HOME="/opt/homebrew/opt/openjdk@23/"
 export JAVA_25_HOME="/opt/homebrew/opt/openjdk@25/"
 
+export JAVA_21_CPPFLAGS='echo "-I"$JAVA_21_HOME"include"'
 export JAVA_23_CPPFLAGS='echo "-I"$JAVA_23_HOME"include"'
 export JAVA_25_CPPFLAGS='echo "-I"$JAVA_25_HOME"include"'
 
+alias java21='export JAVA_HOME=$JAVA_21_HOME'
 alias java23='export JAVA_HOME=$JAVA_23_HOME'
 alias java25='export JAVA_HOME=$JAVA_25_HOME'
 
+alias java21flags='export CPPFLAGS=$JAVA_21_CPPFLAGS'
 alias java23flags='export CPPFLAGS=$JAVA_23_CPPFLAGS'
 alias java25flags='export CPPFLAGS=$JAVA_25_CPPFLAGS'
 

@@ -107,6 +107,7 @@ brew install zopfli
 brew cleanup
 
 # java related tools
+brew install openjdk@21
 brew install openjdk@23
 brew install openjdk@25
 
@@ -119,3 +120,5 @@ done
 brew install maven
 brew install gradle
 
+# Python related tools
+brew install uv
