@@ -4,6 +4,9 @@ export PATH=/usr/local/sbin:$PATH;
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# Add `~/.local/bin`to the `$PATH`
+export PATH="$HOME/.local/bin:$PATH"
+
 # Add Python 3 bins to path
 export PATH="$HOME/Library/Python/3.6/bin:$PATH";
 
