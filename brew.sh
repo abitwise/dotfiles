@@ -84,6 +84,12 @@ brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
 
+# Code-related tools
+brew install tokei
+
+# GitHub
+brew install gh
+
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
