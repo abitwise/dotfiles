@@ -123,7 +123,7 @@ alias java25flags='export CPPFLAGS=$JAVA_25_CPPFLAGS'
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Set default java to Java 25
-export JAVA_HOME=$JAVA_25_HOME
-export CPPFLAGS='echo "-I"$JAVA_25_HOME"include"'
+# Set default java to Java 21
+export JAVA_HOME=$JAVA_21_HOME
+export CPPFLAGS='echo "-I"$JAVA_21_HOME"include"'
 export PATH=$PATH:$JAVA_HOME/bin
